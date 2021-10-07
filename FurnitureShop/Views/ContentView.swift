@@ -29,7 +29,7 @@ struct ContentView: View {
                         ForEach(0 ..< categories.count) { i in
                             CategoryView(isActive: i == selectedIndex, text: categories[i])
                                 .onTapGesture {
-                                    withAnimation(.easeIn) {
+                                    withAnimation(.easeInOut) {
                                         selectedIndex = i
                                     }
                                 }
@@ -37,6 +37,12 @@ struct ContentView: View {
                     }
                     .padding()
                 }
+                
+                Text("Popular")
+                    .font(.custom("PlayfairDisplay-Regular", size: 24))
+                    .padding(.leading)
+                
+                ProductCardView()
             }
         }
     }
@@ -134,5 +140,37 @@ struct CategoryView: View {
             }
         }
         .padding(.trailing)
+    }
+}
+
+struct ProductCardView: View {
+    var body: some View {
+        VStack {
+            Image("chair_1")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 210, height: 210)
+                .cornerRadius(20)
+            
+            Text("Luxury Swedian Chair")
+                .font(.title3)
+                .fontWeight(.bold)
+            
+            HStack(spacing: 2) {
+                ForEach(0 ..< 5) { item in
+                    Image("star")
+                }
+                
+                Spacer()
+                
+                Text("$1299")
+                    .font(.title3)
+                    .fontWeight(.bold)
+            }
+        }
+        .frame(width: 210)
+        .padding()
+        .background(Color.white)
+        .cornerRadius(20)
     }
 }
