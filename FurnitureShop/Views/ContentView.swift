@@ -16,33 +16,56 @@ struct ContentView: View {
             Color("Bg")
                 .edgesIgnoringSafeArea(.all)
             
-            VStack(alignment: .leading) {
-                AppBarView()
-                
-                TagLineView()
-                    .padding()
-                
-                SearchAndScanView()
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(0 ..< categories.count) { i in
-                            CategoryView(isActive: i == selectedIndex, text: categories[i])
-                                .onTapGesture {
-                                    withAnimation(.easeInOut) {
-                                        selectedIndex = i
+            ScrollView {
+                VStack(alignment: .leading) {
+                    AppBarView()
+                    
+                    TagLineView()
+                        .padding()
+                    
+                    SearchAndScanView()
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            ForEach(0 ..< categories.count) { i in
+                                CategoryView(isActive: i == selectedIndex, text: categories[i])
+                                    .onTapGesture {
+                                        withAnimation(.easeInOut) {
+                                            selectedIndex = i
+                                        }
                                     }
-                                }
+                            }
+                        }
+                        .padding()
+                    }
+                    
+                    Text("Popular")
+                        .font(.custom("PlayfairDisplay-Bold", size: 24))
+                        .padding(.leading)
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            ForEach(0 ..< 4) { index in
+                                ProductCardView(image: Image("chair_\(index + 1)"))
+                                    .padding(.leading)
+                            }
                         }
                     }
-                    .padding()
+                    
+                    Text("Best")
+                        .font(.custom("PlayfairDisplay-Bold", size: 24))
+                        .padding(.leading)
+                        .padding(.top)
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            ForEach(0 ..< 4) { index in
+                                ProductCardView(image: Image("chair_\(index + 1)"))
+                                    .padding(.leading)
+                            }
+                        }
+                    }
                 }
-                
-                Text("Popular")
-                    .font(.custom("PlayfairDisplay-Regular", size: 24))
-                    .padding(.leading)
-                
-                ProductCardView()
             }
         }
     }
@@ -144,9 +167,10 @@ struct CategoryView: View {
 }
 
 struct ProductCardView: View {
+    let image: Image
     var body: some View {
         VStack {
-            Image("chair_1")
+            image
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 210, height: 210)
