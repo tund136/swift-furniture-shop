@@ -18,6 +18,8 @@ struct ContentView: View {
                 
                 TagLineView()
                     .padding()
+                
+                SearchAndScanView()
             }
         }
     }
@@ -66,5 +68,33 @@ struct TagLineView: View {
         Text("Furniture!")
             .font(.custom("PlayfairDisplay-Bold", size: 28))
             .foregroundColor(Color("Primary"))
+    }
+}
+
+struct SearchAndScanView: View {
+    @State private var search: String = ""
+    
+    var body: some View {
+        HStack {
+            HStack {
+                Image("Search")
+                    .padding(.trailing)
+                TextField("Search Furniture", text: $search)
+            }
+            .padding(20)
+            .background(Color.white)
+            .cornerRadius(10)
+            .padding(.trailing)
+            
+            Button(action: {
+                
+            }, label: {
+                Image("Scan")
+                    .padding()
+                    .background(Color("Primary"))
+                    .cornerRadius(10)
+            })
+        }
+        .padding(.horizontal)
     }
 }
