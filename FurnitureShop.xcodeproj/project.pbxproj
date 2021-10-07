@@ -11,6 +11,8 @@
 		AD176197270F270B00E30E5A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD176196270F270B00E30E5A /* ContentView.swift */; };
 		AD176199270F271000E30E5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD176198270F271000E30E5A /* Assets.xcassets */; };
 		AD17619C270F271000E30E5A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD17619B270F271000E30E5A /* Preview Assets.xcassets */; };
+		AD1761A5270F27B100E30E5A /* PlayfairDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD1761A3270F27B100E30E5A /* PlayfairDisplay-Bold.ttf */; };
+		AD1761A6270F27B100E30E5A /* PlayfairDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD1761A4270F27B100E30E5A /* PlayfairDisplay-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,9 @@
 		AD176196270F270B00E30E5A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AD176198270F271000E30E5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD17619B270F271000E30E5A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AD1761A3270F27B100E30E5A /* PlayfairDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Bold.ttf"; sourceTree = "<group>"; };
+		AD1761A4270F27B100E30E5A /* PlayfairDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Regular.ttf"; sourceTree = "<group>"; };
+		AD1761A7270F280900E30E5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +56,10 @@
 		AD176193270F270B00E30E5A /* FurnitureShop */ = {
 			isa = PBXGroup;
 			children = (
+				AD1761A8270F28EB00E30E5A /* Views */,
+				AD1761A2270F27B100E30E5A /* Fonts */,
+				AD1761A7270F280900E30E5A /* Info.plist */,
 				AD176194270F270B00E30E5A /* FurnitureShopApp.swift */,
-				AD176196270F270B00E30E5A /* ContentView.swift */,
 				AD176198270F271000E30E5A /* Assets.xcassets */,
 				AD17619A270F271000E30E5A /* Preview Content */,
 			);
@@ -65,6 +72,39 @@
 				AD17619B270F271000E30E5A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AD1761A2270F27B100E30E5A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AD1761A3270F27B100E30E5A /* PlayfairDisplay-Bold.ttf */,
+				AD1761A4270F27B100E30E5A /* PlayfairDisplay-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		AD1761A8270F28EB00E30E5A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AD176196270F270B00E30E5A /* ContentView.swift */,
+				AD1761AA270F28F900E30E5A /* Furniture */,
+				AD1761A9270F28F200E30E5A /* Helpers */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AD1761A9270F28F200E30E5A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AD1761AA270F28F900E30E5A /* Furniture */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Furniture;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +165,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD1761A6270F27B100E30E5A /* PlayfairDisplay-Regular.ttf in Resources */,
+				AD1761A5270F27B100E30E5A /* PlayfairDisplay-Bold.ttf in Resources */,
 				AD17619C270F271000E30E5A /* Preview Assets.xcassets in Resources */,
 				AD176199270F271000E30E5A /* Assets.xcassets in Resources */,
 			);
@@ -272,6 +314,7 @@
 				DEVELOPMENT_TEAM = P5G5J5RV2G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FurnitureShop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -302,6 +345,7 @@
 				DEVELOPMENT_TEAM = P5G5J5RV2G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FurnitureShop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
