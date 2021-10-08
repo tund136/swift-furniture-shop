@@ -48,10 +48,30 @@ struct ContentView: View {
                 .padding()
                 .padding()
                 .background(Color("Primary"))
+                .cornerRadius(50, corners: .topLeft)
                 .frame(maxHeight: .infinity, alignment: .bottom)
+                // Right now there is no direct method to apply a corner radius to a specific side on SwiftUI
+                // That's why we created our own extension
             }
             .edgesIgnoringSafeArea(.bottom)
         }
+    }
+}
+
+struct RoundedCorner: Shape {
+    var radius: CGFloat = .infinity
+    var corners: UIRectCorner = .allCorners
+    
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        
+        return Path(path.cgPath)
+    }
+}
+
+extension View {
+    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+        clipShape(RoundedCorner(radius: radius, corners: corners))
     }
 }
 
@@ -60,8 +80,6 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
-
 
 struct ColorDotView: View {
     let color: Color
