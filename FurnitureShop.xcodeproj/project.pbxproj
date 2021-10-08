@@ -13,6 +13,7 @@
 		AD17619C270F271000E30E5A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD17619B270F271000E30E5A /* Preview Assets.xcassets */; };
 		AD1761A5270F27B100E30E5A /* PlayfairDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD1761A3270F27B100E30E5A /* PlayfairDisplay-Bold.ttf */; };
 		AD1761A6270F27B100E30E5A /* PlayfairDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD1761A4270F27B100E30E5A /* PlayfairDisplay-Regular.ttf */; };
+		AD9DCDE9270FDFC400CED5AE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9DCDE8270FDFC400CED5AE /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		AD1761A3270F27B100E30E5A /* PlayfairDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Bold.ttf"; sourceTree = "<group>"; };
 		AD1761A4270F27B100E30E5A /* PlayfairDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		AD1761A7270F280900E30E5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AD9DCDE8270FDFC400CED5AE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		AD1761AA270F28F900E30E5A /* Furniture */ = {
 			isa = PBXGroup;
 			children = (
+				AD9DCDE8270FDFC400CED5AE /* Home.swift */,
 			);
 			path = Furniture;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD176197270F270B00E30E5A /* ContentView.swift in Sources */,
+				AD9DCDE9270FDFC400CED5AE /* Home.swift in Sources */,
 				AD176195270F270B00E30E5A /* FurnitureShopApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
