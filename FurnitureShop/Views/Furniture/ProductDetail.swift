@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProductDetail: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
         VStack {
             ZStack {
@@ -19,11 +20,11 @@ struct ProductDetail: View {
                         Image("chair_1")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .edgesIgnoringSafeArea(.top)
                         
                         DescriptionView()
                     }
                 }
+                .edgesIgnoringSafeArea(.top)
                 .padding(.bottom, 80)
                 
                 HStack {
@@ -54,13 +55,12 @@ struct ProductDetail: View {
                 // That's why we created our own extension
             }
             .edgesIgnoringSafeArea(.bottom)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(
+                leading: CustomBackButton(action: {presentationMode.wrappedValue.dismiss()}),
+                trailing: Image("threeDot")
+            )
         }
-    }
-}
-
-struct ProductDetail_Previews: PreviewProvider {
-    static var previews: some View {
-        ProductDetail()
     }
 }
 
@@ -209,5 +209,20 @@ struct DescriptionView: View {
         .background(Color("Bg"))
         .cornerRadius(40)
         .offset(y: -40)
+    }
+}
+
+struct CustomBackButton: View {
+    let action: () -> Void
+    
+    var body: some View {
+        Button(action: action, label: {
+            Image(systemName: "chevron.backward")
+                .padding(12)
+                .frame(width: 40, height: 40)
+                .background(Color.white)
+                .cornerRadius(10)
+                .foregroundColor(Color.black)
+        })
     }
 }
