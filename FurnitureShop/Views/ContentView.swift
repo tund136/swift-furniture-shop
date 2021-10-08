@@ -24,7 +24,33 @@ struct ContentView: View {
                         DescriptionView()
                     }
                 }
+                .padding(.bottom, 80)
+                
+                HStack {
+                    Text("$1299")
+                        .font(.title)
+                        .foregroundColor(.white)
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        
+                    }, label: {
+                        Text("Add to Cart")
+                            .fontWeight(.bold)
+                            .padding()
+                            .padding(.horizontal)
+                            .background(Color.white)
+                            .cornerRadius(10)
+                            .foregroundColor(Color("Primary"))
+                    })
+                }
+                .padding()
+                .padding()
+                .background(Color("Primary"))
+                .frame(maxHeight: .infinity, alignment: .bottom)
             }
+            .edgesIgnoringSafeArea(.bottom)
         }
     }
 }
